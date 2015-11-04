@@ -1,0 +1,29 @@
+#!/bin/env bash
+
+#
+# Copies dotfiles from ~/dot to proper locations
+# Saves old dotfiles (if present) to ~/dot_old
+#
+
+
+DIR=~/dot
+
+[ -d ~/dot_old ] || mkdir ~/dot_old
+
+
+#bspwm
+    [ -d ~/.config/bspwm/ ] && mkdir ~/dot_old/bspwm/ && mv ~/.config/bspwm/* ~/dot_old/bspwm/
+    cp $DIR/bspwm/* ~./config/bspwm/
+
+#firefox
+    FFPROFILE=$(ls -td ~/.mozilla/firefox/*/ | head -1)
+    [ -d $FFPROFILE/chrome/userChrome.css ] && mkdir ~/dot_old/firefox/ && mv $FFPROFILE/chrome/userChrome.css ~/dot_old/firefox/
+    cp $DIR/firefox/userChrome.css ~/.mozilla/firefox/$FFPROFILE/chrome/
+
+#panel
+    [ -d ~/.config/panel/ ] && mkdir ~/dot_old/panel/ && mv ~/.config/panel/* ~/dot_old/panel/
+    cp $DIR/panel/* ~./config/panel/
+
+#sxhkd
+    [ -d ~/.config/sxhkd/ ] && mkdir ~/dot_old/sxhkd/ && mv ~/.config/sxhkd/* ~/dot_old/sxhkd/
+    cp $DIR/sxhkd/* ~./config/sxhkd/
