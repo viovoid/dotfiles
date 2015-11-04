@@ -20,6 +20,10 @@ DIR=~/dot
     [ -d $FFPROFILE/chrome/userChrome.css ] && mkdir ~/dot_old/firefox/ && mv $FFPROFILE/chrome/userChrome.css ~/dot_old/firefox/
     cp $DIR/firefox/userChrome.css ~/.mozilla/firefox/$FFPROFILE/chrome/
 
+#git
+    [ -f ~/.gitconfig ] && mkdir ~/dot_old/git/ && mv ~/.gitconfig ~/dot_old/git/
+    cp $DIR/git/* ~/.gitconfig
+
 #panel
     [ -d ~/.config/panel/ ] && mkdir ~/dot_old/panel/ && mv ~/.config/panel/* ~/dot_old/panel/
     cp $DIR/panel/* ~./config/panel/

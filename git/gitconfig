@@ -1,0 +1,7 @@
+[user]
+	name = void
+	email = theviovoid@gmail.com
+[push]
+	default = simple
+[url "https://viovoid@github.com"]
+	insteadOf = https://github.com
