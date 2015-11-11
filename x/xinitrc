@@ -1,0 +1,5 @@
+setxkbmap -option compose:caps
+
+sxhkd &
+exec bspwm
+panel &

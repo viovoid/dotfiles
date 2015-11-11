@@ -5,29 +5,49 @@
 # Saves old dotfiles (if present) to ~/dot_old
 #
 
-
+cd
 DIR=~/dot
 
-[ -d ~/dot_old ] || mkdir ~/dot_old
+[ -d ~/dot_old ] || mkdir -p ~/dot_old/{bspwm/firefox/git/panel/sxhkd/x/zsh}
+
+OLD=~/dot_old
 
 
 #bspwm
-    [ -d ~/.config/bspwm/ ] && mkdir ~/dot_old/bspwm/ && mv ~/.config/bspwm/* ~/dot_old/bspwm/
-    cp $DIR/bspwm/* ~./config/bspwm/
+    [ -d ~/.config/bspwm/ ] && mv ~/.config/bspwm/* ~/dot_old/bspwm/
+    ln -s $DIR/bspwm/bspwmrc ~./config/bspwm/bcpwmrc
 
 #firefox
     FFPROFILE=$(ls -td ~/.mozilla/firefox/*/ | head -1)
-    [ -d $FFPROFILE/chrome/userChrome.css ] && mkdir ~/dot_old/firefox/ && mv $FFPROFILE/chrome/userChrome.css ~/dot_old/firefox/
-    cp $DIR/firefox/userChrome.css ~/.mozilla/firefox/$FFPROFILE/chrome/
-
+    [ -d $FFPROFILE/chrome/userChrome.css ] mv $FFPROFILE/chrome/userChrome.css $OLD/firefox/
+    ln -s $DIR/firefox/userChrome.css ~/.mozilla/firefox/$FFPROFILE/chrome/userChrome.css
+  #vimperator
+    [ -f ~/.vimperatorrc ] && mv ~/.vimperatorrc $OLD/firefox/
+    ln -s $DIR/firefox/vimperatorrc .vimperatorrc
 #git
-    [ -f ~/.gitconfig ] && mkdir ~/dot_old/git/ && mv ~/.gitconfig ~/dot_old/git/
-    cp $DIR/git/* ~/.gitconfig
+    [ -f ~/.gitconfig ] && mv ~/.gitconfig $OLD/git/
+    ln -s $DIR/git/gitconfig ~/.gitconfig
 
 #panel
-    [ -d ~/.config/panel/ ] && mkdir ~/dot_old/panel/ && mv ~/.config/panel/* ~/dot_old/panel/
-    cp $DIR/panel/* ~./config/panel/
+    [ -d ~/.config/panel/ ] && mv ~/.config/panel/* $OLD/panel/
+    ln -s $DIR/panel/panel ~./config/panel/panel
+    ln -s $DIR/panel/panel_bar ~./config/panel/panel_bar
+    ln -s $DIR/panel/panel_colors ./config/panel/panel_colors
 
 #sxhkd
-    [ -d ~/.config/sxhkd/ ] && mkdir ~/dot_old/sxhkd/ && mv ~/.config/sxhkd/* ~/dot_old/sxhkd/
-    cp $DIR/sxhkd/* ~./config/sxhkd/
+    [ -d ~/.config/sxhkd/ ] && mv ~/.config/sxhkd/* $OLD/sxhkd/
+    ln -s $DIR/sxhkd/sxhkdrc ~./config/sxhkd/sxhkdrc
+
+#x
+    [ -f ~/.Xdefaults ] && mv ~/.Xdefaults $OLD/x/ 
+    ln -s $DIR/x/Xdefaults .Xdefaults
+
+    [ -f ~/.xinitrc ] && mv ~/.xinitrc $OLD/x/
+    ln -s $DIR/x/xinitrc .xinitrc
+#zsh
+    [ -f ~/.zshrc ] && mv ~/.xinitrc $old/zsh/
+    ln -s $DIR/zsh .zshrc
+
+#delete empty config directories
+    find $OLD -type d -empty -delete
+

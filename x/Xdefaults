@@ -1,0 +1,10 @@
+#URxvt*transparent: true
+URxvt*foreground: #1793D1
+URxvt*background: Black
+URxvt*scrollBar: false
+#URxvt*scrollBar_right: true
+
+URxvt.perl-ext-common: default,clipboard
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
