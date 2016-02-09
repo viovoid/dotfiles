@@ -38,6 +38,10 @@ OLD=~/dot_old
     [ -d ~/.config/sxhkd/ ] && mv ~/.config/sxhkd/* $OLD/sxhkd/
     ln -s $DIR/sxhkd/sxhkdrc ~./config/sxhkd/sxhkdrc
 
+#vim
+	[ -d ~/.vimrc ] && mv && ~/.vimrc $OLD/vim/
+	ln -s $DIR/vim/.vimrc ~/.vimrc
+
 #x
     [ -f ~/.Xdefaults ] && mv ~/.Xdefaults $OLD/x/ 
     ln -s $DIR/x/Xdefaults .Xdefaults

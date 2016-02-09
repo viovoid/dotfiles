@@ -1,6 +1,5 @@
 setxkbmap -option compose:caps
 
-/usr/bin/dropbox &
 sxhkd &
 exec bspwm
 panel &
