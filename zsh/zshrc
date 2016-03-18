@@ -25,7 +25,7 @@
 # Set Arch blue
 #	export ARCH_BLUE=#1793D1
 
-# BAR settings
+# lemonbar settings
 	export PANEL_FIFO="/tmp/panel-fifo"
 	PANEL_HEIGHT=18
 	PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
@@ -33,7 +33,9 @@
 
 # Aliases
 	alias x='startx'
+	alias internet='sudo netctl start'
 	alias xumf='sudo netctl start eduroam && x'
+	alias xamber='sudo netctl start ATT7Y9xcn4 && x'
 	alias ls='ls --color=auto'
 	alias please='sudo $(fc -ln -1)'
 	alias sd='sudo shutdown now'
