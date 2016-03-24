@@ -27,7 +27,7 @@
 
 # lemonbar settings
 	export PANEL_FIFO="/tmp/panel-fifo"
-	PANEL_HEIGHT=15
+	PANEL_HEIGHT=16
 	PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
 	export PANEL_FIFO PANEL_HEIGHT PANEL_FONT_FAMILY
 
