@@ -33,7 +33,7 @@
 
 # Aliases
 	alias x='startx'
-	alias sshh='ssh -p 30622 mirrodin.hacked.jp'
+	alias sshh='ssh -Y -p 30622 mirrodin.hacked.jp'
 	alias internet='sudo netctl start'
 	alias xumf='sudo netctl start eduroam && x'
 	alias xamber='sudo netctl start ATT7Y9xcn4 && x'
@@ -44,12 +44,6 @@
 	alias dbox='dropbox-cli'
 	alias ipld='sudo ip link set wlp3s0 down'
 	alias xe='journalctl -xe'
-	alias jflap='java -jar /home/void/dropbox/umf/2015.4/csc381/JFLAP.jar'
-
-	alias win='virtualbox --startvm win7 --fullscreen'
-
-	alias umf='cd /home/void/dropbox/umf/2015.4/'
-	alias cdrp='cd /home/void/dropbox/umf/2015.4/csc446/rp/'
 
 	alias duk='du --block-size=KiB --max-depth=1 | sort -n' 
 	alias dum='du --block-size=MiB --max-depth=1 | sort -n'    

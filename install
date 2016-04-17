@@ -6,7 +6,7 @@
 #
 
 cd
-DIR=~/dot
+DIR=~/.dot
 
 [ -d ~/dot_old ] || mkdir -p ~/dot_old/{bspwm/firefox/git/panel/sxhkd/x/zsh}
 
