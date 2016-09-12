@@ -33,17 +33,17 @@
 
 # Aliases
 	alias x='startx'
-	alias sshh='ssh -Y -p 30622 mirrodin.hacked.jp'
+	alias sshh='ssh -Y -p 30622 mirrodin.protoco.de'
 	alias internet='sudo netctl start'
 	alias xumf='sudo netctl start eduroam && x'
-	alias xamber='sudo netctl start ATT7Y9xcn4 && x'
 	alias ls='ls --color=auto'
 	alias please='sudo $(fc -ln -1)'
-	alias sd='sudo shutdown now'
+#	alias sd='sudo shutdown now'
 	alias pinga='ping -c 3 www.archlinux.org'
-	alias dbox='dropbox-cli'
 	alias ipld='sudo ip link set wlp3s0 down'
 	alias xe='journalctl -xe'
+	alias lsgpu='lspci -vnn | grep VGA -A 12'
+	alias steam="LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam"
 
 	alias duk='du --block-size=KiB --max-depth=1 | sort -n' 
 	alias dum='du --block-size=MiB --max-depth=1 | sort -n'    
