@@ -3,6 +3,10 @@ setxkbmap -option compose:caps
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
+toggle_touchpad
+
+xrdb ~/.Xresources
+
 sxhkd &
 exec bspwm
 panel &
