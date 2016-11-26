@@ -38,15 +38,14 @@
 	alias internet='sudo netctl stop-all && sudo netctl start'
 	alias i='internet'
 	alias xumf='sudo netctl start eduroam && x'
-	alias xamber='sudo netctl start ATT7Y9xcn4 && x'
 	alias ls='ls --color=auto'
 	alias please='sudo $(fc -ln -1)'
 	alias sd='sudo shutdown now'
 	alias ds='sudo shutdown now'
 	alias pinga='ping -c 3 www.archlinux.org'
-	alias dbox='dropbox-cli'
 	alias ipld='sudo ip link set wlp3s0 down'
 	alias xe='journalctl -xe'
+	alias lsgpu='lspci -vnn | grep VGA -A 12'
 
 	alias duk='du --block-size=KiB --max-depth=1 | sort -n' 
 	alias dum='du --block-size=MiB --max-depth=1 | sort -n'    
@@ -57,7 +56,4 @@
 
 	alias cal='cal -m'
 	alias win='rdesktop -g 1600x900 -K -P -z -x l -r sound:off -u void mirrodin.protoco.de:3389' 
-	alias steam2="LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam"
-
-# fix the internet!
-#ipld
+	alias steam-preload="LD_PRELOAD='/usr/$LIB/libstdc++.so.6 /usr/$LIB/libgcc_s.so.1 /usr/$LIB/libxcb.so.1 /usr/$LIB/libgpg-error.so' /usr/bin/steam"
