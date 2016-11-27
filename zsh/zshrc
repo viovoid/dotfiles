@@ -33,7 +33,6 @@
 
 # Aliases
 	alias x='startx'
-	alias ssh='ssh -L 5901:localhost:5901'
 	alias sshh='ssh -Y -p 30622 mirrodin.protoco.de'
 	alias internet='sudo netctl stop-all && sudo netctl start'
 	alias i='internet'
